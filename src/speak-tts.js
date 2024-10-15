@@ -88,7 +88,7 @@ class SpeakTTS {
     const voices = speechSynthesis.getVoices()
     // set voice by name
     if (isString(voice)) {
-      synthesisVoice = voices.find((v) => v.name === voice)
+      synthesisVoice = voices.find((v) => v.name === voice && v.lang === this.lang)
     }
     // Set the voice in conf if found
     if (isObject(voice)) {
